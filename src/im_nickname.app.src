@@ -5,7 +5,8 @@
   {mod, { im_nickname_app, []}},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    im_redis
    ]},
   {env,[
         {handlers,

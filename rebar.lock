@@ -8,7 +8,7 @@
   1},
  {<<"im_redis">>,
   {git,"https://github.com/wcy123/im_redis.git",
-       {ref,"7dd7792f22141da7a3bb3f72f002e270a5265ee9"}},
+       {ref,"5e309befdc9f5da788a97f17d5fc5980af8f4efd"}},
   0},
  {<<"lager">>,
   {git,"https://github.com/basho/lager.git",
