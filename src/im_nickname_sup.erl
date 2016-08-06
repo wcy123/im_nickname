@@ -29,7 +29,7 @@ start_link() ->
 %% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
 init([]) ->
     Web = web_specs(im_nickname_web, 8080),
-    Processes = [Web],
+    Processes = [Web, handler_spec()],
     Strategy = {one_for_one, 10, 10},
     {ok,
      {Strategy, lists:flatten(Processes)}}.
@@ -46,3 +46,7 @@ web_specs(Mod, Port) ->
     {Mod,
      {Mod, start, [WebConfig]},
      permanent, 5000, worker, dynamic}.
+handler_spec() ->
+    {im_nickname_handler,
+     {im_nickname_handler, start_link, []},
+     permanent, 5000, worker, [im_nickname_handler]}.
